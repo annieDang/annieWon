@@ -1,0 +1,22 @@
+{
+  "name": "anniewon",
+  "version": "1.0.0",
+  "description": "a games workshop",
+  "main": "app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/annieDang/annieWon.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/annieDang/annieWon/issues"
+  },
+  "homepage": "https://github.com/annieDang/annieWon#readme",
+  "dependencies": {
+    "express": "^4.16.2"
+  }
+}
