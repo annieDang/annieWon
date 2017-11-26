@@ -1,0 +1,55 @@
+<!doctype html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8" />
+	<title>Dessert table</title>
+	<script type="text/javascript" src="js/lib/phaser.min.js"></script>
+	<style type="text/css">
+	body {
+		margin: 0;
+	}
+	</style>
+</head>
+<body>
+
+	<script type="text/javascript">
+
+	var game = new Phaser.Game(480, 800 , Phaser.AUTO, '', { preload: preload, create: create, update: update });
+
+	function preload() {
+		game.load.image('bg', 'assets/background/mainbg.png');
+		game.load.image('start_btn','assets/UI/st-01.png');
+	  game.load.image('rank_btn','assets/UI/btn2-01.png');
+	  game.load.image('help_btn','assets/UI/btn3-01-01.png');
+	}
+	var button1;
+	var button2;
+	var button3;
+	function create() {
+		//  We're going to be using physics, so enable the Arcade Physics system
+		game.physics.startSystem(Phaser.Physics.ARCADE);
+		//  A simple background for our game
+		game.add.sprite(0, 0, 'bg');
+
+	  button1 = game.add.sprite(20,game.world.centerY,"start_btn");
+		button1.scale.setTo(0.3, 0.3);
+
+		button2 = game.add.sprite(20,game.world.centerY + 120,"rank_btn");
+		button2.scale.setTo(0.3, 0.3);
+
+		button3 = game.add.sprite(20,game.world.centerY + 240,"help_btn");
+		button3.scale.setTo(0.3, 0.3);
+	}
+
+	function update() {
+
+	}
+	function action (button) {
+		alert("Clicked!")
+
+	}
+
+	</script>
+
+</body>
+</html>
