@@ -4,7 +4,7 @@ var playState ={
     game.add.sprite(0, 0, 'playing_bg');
 
     //score
-    var score_bar = game.add.sprite(0, 0, 'score_bar');
+    var score_bar = game.add.sprite(5, 0, 'score_bar');
     score_bar.scale.setTo(0.25, 0.25);
     var _fontStyle = { font: "30px Arial", fill: "#FFCC00", stroke: "#333", strokeThickness: 5, align: "center" };
     var score_text = game.add.text(130, 60, "X " + score, _fontStyle);
@@ -13,7 +13,7 @@ var playState ={
     game.add.sprite(10, 10, 'cake1');
 
     var fork = game.add.sprite(game.world.width/2 - 20, 800 -100, 'fork');
-
+    fork.scale.setTo(2, 2);
     //  Finally some cake to collect
     var cakes = game.add.group();
     cakes.enableBody = true;
