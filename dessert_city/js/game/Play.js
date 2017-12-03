@@ -52,7 +52,7 @@ CakeCity.PlayState.prototype ={
 
 CakeCity.InGame = {
   fire: function(){
-      CakeCity.fork.rotation = game.physics.arcade.moveToPointer(CakeCity.fork, 300, game.input.activePointer, 300);
+    CakeCity.fork.rotation = game.physics.arcade.moveToPointer(CakeCity.fork, 300, game.input.activePointer, 300);
   },
   spawnCake: function(){
 
@@ -63,11 +63,21 @@ CakeCity.InGame = {
     }
     // Removes the cake from the screen
     cake.kill();
+    CakeCity.InGame.killTheFolk(CakeCity.fork);
+  },
+  addFork: function(){
+    CakeCity.fork = game.add.sprite(game.world.width/2 - 20, 800 -50, 'fork');
+    CakeCity.fork.anchor.setTo(0.5, 0.5)
+    game.physics.enable(CakeCity.fork, Phaser.Physics.ARCADE);
+    CakeCity.fork.body.allowRotation = false;
+    CakeCity.fork.checkWorldBounds = true
+    CakeCity.fork.events.onOutOfBounds.add( CakeCity.InGame.killTheFolk, this );
+  },
+  killTheFolk: function(folk){
     folk.kill();
     //  Add and update the score
     CakeCity.score -= 1;
     CakeCity.score_text.text = 'Fork X ' + CakeCity.score;
-
     if(CakeCity.score == 0){
       CakeCity.score = 10;
       if(CakeCity.cakes.countLiving() == 0){
@@ -77,12 +87,8 @@ CakeCity.InGame = {
       }
 
     }
-    CakeCity.InGame.addFork();
-  },
-  addFork: function(){
-    CakeCity.fork = game.add.sprite(game.world.width/2 - 20, 800 -50, 'fork');
-    CakeCity.fork.anchor.setTo(0.5, 0.5)
-    game.physics.enable(CakeCity.fork, Phaser.Physics.ARCADE);
-    CakeCity.fork.body.allowRotation = false;
+    if(CakeCity.score > 0){
+      CakeCity.InGame.addFork();
+    }
   }
 };
