@@ -1,4 +1,6 @@
-var loadState ={
+//Assets loading procedure
+CakeCity.LoadState = function(game){};
+CakeCity.LoadState.prototype ={
   preload: function(){
     var loadingLabel = game.add.text(80, 150, 'loading...', {font: '30px Courier', fill: '#ffffff'});
     //background of views
@@ -14,7 +16,8 @@ var loadState ={
 
     //for playing views
     game.load.image('score_bar','assets/UI/1-01.png');
-    game.load.image('fork','assets/fork/fork1.png');
+    // game.load.image('fork','assets/fork/fork1.png');
+    game.load.image('fork','assets/fork/arrow.png');
     game.load.image('cake1','assets/cakes/cake1_1.png');
     game.load.image('cake2','assets/cakes/cake1_2.png');
     game.load.image('cake3','assets/cakes/cheese1.png');

@@ -1,4 +1,6 @@
-var menuState ={
+//Menu screen
+CakeCity.MenuState = function(game){};
+CakeCity.MenuState.prototype ={
   create: function(){
     game.add.sprite(0, 0, 'menu_bg');
 
