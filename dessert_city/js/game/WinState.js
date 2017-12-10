@@ -2,7 +2,10 @@
 CakeCity.WinState = function(game){};
 CakeCity.WinState.prototype ={
   create: function(){
-    game.add.sprite(0, 0, 'playing_bg');
+    var bg = game.add.sprite(0, 0, 'playing_bg');
+    bg.width = game.width;
+    bg.height = game.height;
+    
     game.add.text(game.world.centerX, game.world.centerY, 'You win :)!', {font: '30px Courier', fill: '#000000'});
     var menuButton = game.add.text(game.world.centerX, game.world.centerY - 100, 'Menu', {font: '30px Courier', fill: '#000000'});
     var playButton = game.add.text(game.world.centerX, game.world.centerY - 200, 'Play Again', {font: '30px Courier', fill: '#000000'});

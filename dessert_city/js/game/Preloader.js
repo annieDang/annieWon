@@ -18,6 +18,8 @@ CakeCity.LoadState.prototype ={
     game.load.image('score_bar','assets/UI/1-01.png');
     // game.load.image('fork','assets/fork/fork1.png');
     game.load.image('fork','assets/fork/arrow.png');
+    game.load.image('bullet', 'assets/fork/bullet.png');
+
     game.load.image('cake1','assets/cakes/cake1_1.png');
     game.load.image('cake2','assets/cakes/cake1_2.png');
     game.load.image('cake3','assets/cakes/cheese1.png');
@@ -25,6 +27,8 @@ CakeCity.LoadState.prototype ={
     game.load.image('cake5','assets/cakes/cheese2.png');
     game.load.image('cake6','assets/cakes/와플.png');
     game.load.image('cake7','assets/cakes/와플2 copy.png');
+
+    game.load.spritesheet('kaboom', 'assets/cakes/explosion.png', 64, 64, 23);
   },
   create: function(){
 

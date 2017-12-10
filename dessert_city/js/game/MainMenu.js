@@ -2,16 +2,18 @@
 CakeCity.MenuState = function(game){};
 CakeCity.MenuState.prototype ={
   create: function(){
-    game.add.sprite(0, 0, 'menu_bg');
+    var mainBg = game.add.sprite(0, 0, 'menu_bg');
+    mainBg.width = game.width;
+    mainBg.height = game.height;
 
-    var button1 = game.add.sprite(20,game.world.centerY,"start_btn");
-    button1.scale.setTo(0.3, 0.3);
+    var button1 = game.add.sprite(10,game.world.centerY,"start_btn");
+    button1.scale.setTo(0.5, 0.5);
 
-    button2 = game.add.sprite(20,game.world.centerY + 120,"rank_btn");
-    button2.scale.setTo(0.3, 0.3);
+    button2 = game.add.sprite(10,game.world.centerY + 150,"rank_btn");
+    button2.scale.setTo(0.5, 0.5);
 
-    button3 = game.add.sprite(20,game.world.centerY + 240,"help_btn");
-    button3.scale.setTo(0.3, 0.3);
+    button3 = game.add.sprite(10,game.world.centerY + 300,"help_btn");
+    button3.scale.setTo(0.5, 0.5);
 
     button1.inputEnabled = true;
     button1.events.onInputDown.add(this.start, this);
